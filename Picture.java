@@ -27,6 +27,56 @@ public class Picture
     }
 
     /**
+     * Amanecer this.
+     */
+    public void amanecer()
+    {
+        wall = new Square();
+        wall.moveHorizontal(-140);
+        wall.moveVertical(20);
+        wall.changeSize(120);
+        wall.makeVisible();
+        
+        window = new Square();
+        window.changeColor("black");
+        window.moveHorizontal(-120);
+        window.moveVertical(40);
+        window.changeSize(40);
+        window.makeVisible();
+
+        roof = new Triangle();  
+        roof.changeSize(60, 180);
+        roof.moveHorizontal(20);
+        roof.moveVertical(-60);
+        roof.makeVisible();
+
+        grass = new Square();
+        grass.changeColor("green");
+        grass.moveHorizontal(-350);
+        grass.moveVertical(125);
+        grass.changeSize(750);
+        grass.makeVisible();
+            
+        moon = new Circle();
+        moon.changeColor("magenta");
+        moon.moveHorizontal(-150);
+        moon.moveVertical(-10);
+        moon.changeSize(40);
+        moon.makeVisible();
+        moon.slowMoveVertical(+250);
+        
+        sun = new Circle();
+        sun.changeColor("yellow");
+        sun.moveHorizontal(100);
+        sun.moveVertical(210);
+        sun.changeSize(80);
+        sun.makeVisible();
+        sun.slowMoveVertical(-250);
+
+        
+    }
+    
+    /**
      * Draw this picture.
      */
     public void draw()
