@@ -17,6 +17,7 @@ public class Picture
     private Circle sun;
     private Circle moon;
     private Square grass;
+    private Person persona;
 
     /**
      * Constructor for objects of class Picture
@@ -26,56 +27,6 @@ public class Picture
         // nothing to do... instance variables are automatically set to null
     }
 
-    /**
-     * Amanecer this.
-     */
-    public void amanecer()
-    {
-        wall = new Square();
-        wall.moveHorizontal(-140);
-        wall.moveVertical(20);
-        wall.changeSize(120);
-        wall.makeVisible();
-        
-        window = new Square();
-        window.changeColor("black");
-        window.moveHorizontal(-120);
-        window.moveVertical(40);
-        window.changeSize(40);
-        window.makeVisible();
-
-        roof = new Triangle();  
-        roof.changeSize(60, 180);
-        roof.moveHorizontal(20);
-        roof.moveVertical(-60);
-        roof.makeVisible();
-
-        grass = new Square();
-        grass.changeColor("green");
-        grass.moveHorizontal(-350);
-        grass.moveVertical(125);
-        grass.changeSize(750);
-        grass.makeVisible();
-            
-        moon = new Circle();
-        moon.changeColor("magenta");
-        moon.moveHorizontal(-150);
-        moon.moveVertical(-10);
-        moon.changeSize(40);
-        moon.makeVisible();
-        moon.slowMoveVertical(+250);
-        
-        sun = new Circle();
-        sun.changeColor("yellow");
-        sun.moveHorizontal(100);
-        sun.moveVertical(210);
-        sun.changeSize(80);
-        sun.makeVisible();
-        sun.slowMoveVertical(-250);
-
-        
-    }
-    
     /**
      * Draw this picture.
      */
@@ -125,6 +76,23 @@ public class Picture
         
     }
 
+    /**
+     * Amanecer this.
+     */
+    public void amanecer()
+    {
+        moon.makeInvisible();
+
+        sun.slowMoveVertical(-250);
+        
+        persona = new Person();
+        persona.moveHorizontal(250);
+        persona.moveVertical(25);
+        persona.makeVisible();
+        persona.slowMoveHorizontal(-250);
+    }
+    
+    
     /**
      * Change this picture to black/white display
      */
